@@ -1,0 +1,16 @@
+version: "3"
+services:
+  ai-address-book:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    stdin_open: true
+    volumes:
+      - ../:/workspaces
+    models:
+      - llm
+
+models:
+  llm:
+    model: ai/llama3.2:3B-Q4_K_M
